@@ -1,4 +1,4 @@
-# Movie ticket booking system using nextjs, apollo graphql client and server, typescript, tailwind css
+# Movie ticket booking system using nextjs, apollo graphql client and server, typescript, tailwind css (In Development)
 
 This is a simple Movie ticket booking system using nextjs, apollo graphql client and server, typescript, tailwind css
 
