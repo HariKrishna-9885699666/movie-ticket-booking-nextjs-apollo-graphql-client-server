@@ -8,7 +8,7 @@ import { getFormattedDate } from "./util/utilityFunction";
 
 const GET_TOP_MOVIES = gql`
   query {
-    topMovies(limit: 20) {
+    topMovies(limit: 10) {
       id
       title
       budget
