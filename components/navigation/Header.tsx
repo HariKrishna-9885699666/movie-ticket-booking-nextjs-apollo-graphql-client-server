@@ -15,7 +15,7 @@ export default function Header() {
             style={{ width: "120px", height: "80px" }}
           />
         </Link>
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-4 text-center">
           <li>
             <Link
               href="/"

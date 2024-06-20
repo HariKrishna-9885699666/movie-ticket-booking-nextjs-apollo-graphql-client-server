@@ -8,7 +8,7 @@ import { getFormattedDate } from "./util/utilityFunction";
 
 const GET_TOP_MOVIES = gql`
   query {
-    topMovies(limit: 10) {
+    getRandomMovies(limit: 10) {
       id
       title
       budget
@@ -56,7 +56,7 @@ export default function Home() {
         transitionTime={1000}
         dynamicHeight={true}
       >
-        {data?.topMovies?.map((item: any, index: number) => {
+        {data?.getRandomMovies?.map((item: any, index: number) => {
           const releaseDate = getFormattedDate(item.releaseDate);
 
           return (

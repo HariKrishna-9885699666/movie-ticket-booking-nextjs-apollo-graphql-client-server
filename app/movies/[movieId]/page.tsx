@@ -1,9 +1,8 @@
 // app/movie/[id].tsx
 "use client";
 import { gql, useQuery } from "@apollo/client";
-import Image from "next/image";
 import { ThreeDots } from "react-loader-spinner";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import Link from "next/link";
 import { getFormattedDate } from "../../util/utilityFunction";
 
@@ -120,18 +119,34 @@ export default function MovieDetails({
         {/* Full width for button */}
         <Link
           href="/movies"
-          className="text-blue-500 hover:underline text-white"
+          className="text-blue-500 hover:underline text-black"
         >
           ← Back to Movies
         </Link>
       </div>
-      <div className="w-full md:w-1/2 lg:w-1/3">
+      <div className="w-full md:w-1/2 lg:w-1/3 flex flex-col items-center">
         <img
           src={data.movie.posterPath1}
           alt="Movie Poster"
           className="rounded-lg shadow-md w-full"
         />
+
+        {/* Center the button */}
+        <div className="w-full flex justify-center mt-4">
+          <button
+            type="button"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 underline"
+          >
+            <Link
+              href={`/movies/${movieId}/book`}
+              className="text-blue-500 hover:underline text-white"
+            >
+              Book Tickets
+            </Link>
+          </button>
+        </div>
       </div>
+
       <div className="w-full md:w-1/2 lg:w-2/3 bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg p-4 rounded-lg text-white">
         <h1 className="text-6xl font-bold mb-2">
           {data.movie.title} ({getFormattedDate(data.movie.releaseDate, "Y")})

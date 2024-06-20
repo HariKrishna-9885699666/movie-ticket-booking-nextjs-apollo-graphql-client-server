@@ -1,4 +1,5 @@
 import { gql } from "graphql-tag";
+
 const typeDefs = gql`
   type Movie {
     id: Int!
@@ -17,6 +18,7 @@ const typeDefs = gql`
     spokenLanguages: String
     tagLine: String
     credits: [Credit]
+    theaters: [Theater!]
   }
 
   type Credit {
@@ -28,11 +30,31 @@ const typeDefs = gql`
     cast: Int!
   }
 
+  type Theater {
+    id: Int!
+    theaterName: String!
+    location: String!
+    mTicket: Boolean!
+    foodCourt: Boolean!
+    parking: Boolean!
+    timings: [String!]!
+  }
+
+  type MovieTheater {
+    movieId: Int!
+    theaterId: Int!
+  }
+
   type Query {
     movies: [Movie]
     movie(id: Int!): Movie
     credits(movieID: Int!): [Credit]
     topMovies(limit: Int!): [Movie!]!
+    getRandomMovies(limit: Int!): [Movie!]!
+    theaters: [Theater]
+    theater(id: Int!): Theater
+    moviesInTheater(theaterId: Int!): [Movie]
   }
 `;
+
 export default typeDefs;

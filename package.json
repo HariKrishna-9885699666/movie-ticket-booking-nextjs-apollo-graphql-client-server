@@ -12,6 +12,8 @@
     "@apollo/client": "^3.10.5",
     "@apollo/server": "^4.10.4",
     "@as-integrations/next": "^3.0.0",
+    "crypto": "^1.0.1",
+    "dayjs": "^1.11.11",
     "graphql": "^16.8.2",
     "graphql-tag": "^2.12.6",
     "mysql2": "^3.10.1",
